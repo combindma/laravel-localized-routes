@@ -2,9 +2,8 @@
 
 namespace CodeZero\LocalizedRoutes\Tests;
 
-use CodeZero\BrowserLocale\BrowserLocale;
+use CodeZero\LocalizedRoutes\BrowserLocale\BrowserLocale;
 use CodeZero\LocalizedRoutes\LocalizedRoutesServiceProvider;
-use CodeZero\UriTranslator\UriTranslatorServiceProvider;
 use Illuminate\Contracts\View\View;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\App;
@@ -208,7 +207,6 @@ abstract class TestCase extends  BaseTestCase
     {
         return [
             LocalizedRoutesServiceProvider::class,
-            UriTranslatorServiceProvider::class,
         ];
     }
 }

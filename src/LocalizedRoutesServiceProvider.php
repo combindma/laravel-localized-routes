@@ -64,6 +64,7 @@ class LocalizedRoutesServiceProvider extends ServiceProvider
         IsLocalizedMacro::register();
         LocalizedMacro::register();
         LocalizedUrlMacro::register();
+        UriMacro::register();
     }
 
     /**
@@ -105,8 +106,6 @@ class LocalizedRoutesServiceProvider extends ServiceProvider
         $this->app->bind(UriTranslator::class, function () {
             return new UriTranslator();
         });
-
-        UriMacro::register();
     }
 
     /**
