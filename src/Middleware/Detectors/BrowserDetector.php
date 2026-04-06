@@ -2,8 +2,8 @@
 
 namespace CodeZero\LocalizedRoutes\Middleware\Detectors;
 
-use CodeZero\BrowserLocale\BrowserLocale;
-use CodeZero\BrowserLocale\Filters\CombinedFilter;
+use CodeZero\LocalizedRoutes\BrowserLocale\BrowserLocale;
+use CodeZero\LocalizedRoutes\BrowserLocale\Filters\CombinedFilter;
 use Illuminate\Support\Facades\App;
 
 class BrowserDetector implements Detector

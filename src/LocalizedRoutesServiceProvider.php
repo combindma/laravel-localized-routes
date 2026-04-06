@@ -2,7 +2,7 @@
 
 namespace CodeZero\LocalizedRoutes;
 
-use CodeZero\BrowserLocale\Laravel\BrowserLocaleServiceProvider;
+use CodeZero\LocalizedRoutes\BrowserLocale\BrowserLocale;
 use CodeZero\LocalizedRoutes\Illuminate\Routing\Redirector;
 use CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator;
 use CodeZero\LocalizedRoutes\Macros\Route\HasLocalizedMacro;
@@ -11,8 +11,10 @@ use CodeZero\LocalizedRoutes\Macros\Route\IsLocalizedMacro;
 use CodeZero\LocalizedRoutes\Macros\Route\LocalizedMacro;
 use CodeZero\LocalizedRoutes\Macros\Route\LocalizedUrlMacro;
 use CodeZero\LocalizedRoutes\Middleware\LocaleHandler;
-use CodeZero\UriTranslator\UriTranslatorServiceProvider;
+use CodeZero\LocalizedRoutes\UriTranslator\Macros\Lang\UriMacro;
+use CodeZero\LocalizedRoutes\UriTranslator\UriTranslator;
 use Illuminate\Contracts\Routing\UrlGenerator as UrlGeneratorContract;
+use Illuminate\Support\Facades\Request;
 use Illuminate\Support\ServiceProvider;
 
 class LocalizedRoutesServiceProvider extends ServiceProvider
@@ -88,14 +90,23 @@ class LocalizedRoutesServiceProvider extends ServiceProvider
     }
 
     /**
-     * Registers the package dependencies
+     * Register the inlined package dependencies.
      *
      * @return void
      */
     protected function registerProviders()
     {
-        $this->app->register(BrowserLocaleServiceProvider::class);
-        $this->app->register(UriTranslatorServiceProvider::class);
+        $this->app->bind(BrowserLocale::class, function () {
+            return new BrowserLocale(
+                Request::server('HTTP_ACCEPT_LANGUAGE')
+            );
+        });
+
+        $this->app->bind(UriTranslator::class, function () {
+            return new UriTranslator();
+        });
+
+        UriMacro::register();
     }
 
     /**

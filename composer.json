@@ -20,39 +20,25 @@
         }
     ],
     "require": {
-        "php": "^8.3",
-        "codezero/browser-locale": "dev-master",
-        "codezero/composer-preload-files": "^1.0",
-        "codezero/laravel-uri-translator": "dev-master",
-        "codezero/php-url-builder": "dev-master",
-        "illuminate/support": "^12.0"
+        "php": "^8.4",
+        "illuminate/support": "^13.0"
     },
     "require-dev": {
+        "laravel/boost": "^2.4",
         "mockery/mockery": "^1.3.3",
-        "orchestra/testbench": "^10.0",
-        "phpunit/phpunit": "^11.0"
+        "orchestra/testbench": "^11.0",
+        "phpunit/phpunit": "^12.0"
     },
-    "repositories": [
-        {
-            "type": "vcs",
-            "url": "https://github.com/combindma/php-url-builder.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/combindma/laravel-uri-translator.git"
-        },
-        {
-            "type": "vcs",
-            "url": "https://github.com/combindma/browser-locale.git"
-        }
-    ],
     "scripts": {
         "test": "phpunit"
     },
     "autoload": {
         "psr-4": {
             "CodeZero\\LocalizedRoutes\\": "src"
-        }
+        },
+        "files": [
+            "src/helpers.php"
+        ]
     },
     "autoload-dev": {
         "psr-4": {
@@ -67,18 +53,12 @@
             "aliases": {
                 "LocaleConfig": "CodeZero\\LocalizedRoutes\\Facades\\LocaleConfig"
             }
-        },
-        "preload-files": [
-            "src/helpers.php"
-        ]
+        }
     },
     "config": {
         "preferred-install": "dist",
         "sort-packages": true,
-        "optimize-autoloader": true,
-        "allow-plugins": {
-            "codezero/composer-preload-files": true
-        }
+        "optimize-autoloader": true
     },
     "minimum-stability": "dev",
     "prefer-stable": true

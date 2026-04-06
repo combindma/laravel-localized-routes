@@ -3,7 +3,7 @@
 namespace CodeZero\LocalizedRoutes;
 
 use CodeZero\LocalizedRoutes\Facades\LocaleConfig;
-use CodeZero\UrlBuilder\UrlBuilder;
+use CodeZero\LocalizedRoutes\UrlBuilder\UrlBuilder;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Collection;
