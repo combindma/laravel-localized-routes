@@ -156,7 +156,7 @@
     "nodejs_package_manager_path": "npm"
   }
 }]]></component>
-  <component name="RunManager" selected="PHPUnit.Feature">
+  <component name="RunManager" selected="PHPUnit.Unit">
     <configuration name="Feature" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" directory="$PROJECT_DIR$/tests/Feature" />
       <method v="2" />
@@ -171,8 +171,8 @@
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="PHPUnit.Feature" />
         <item itemvalue="PHPUnit.Unit" />
+        <item itemvalue="PHPUnit.Feature" />
       </list>
     </recent_temporary>
   </component>
@@ -192,7 +192,7 @@
       <option name="presentableId" value="Default" />
       <updated>1775491698321</updated>
       <workItem from="1775491699488" duration="1115000" />
-      <workItem from="1775497636936" duration="177000" />
+      <workItem from="1775497636936" duration="714000" />
     </task>
     <servers />
   </component>
