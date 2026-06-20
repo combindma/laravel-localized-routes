@@ -143,19 +143,19 @@
     <option name="showLibraryContents" value="true" />
     <option name="showScratchesAndConsoles" value="false" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "ModuleVcsDetector.initialDetectionPerformed": "true",
-    "PHPUnit.Feature.executor": "Run",
-    "PHPUnit.Unit.executor": "Run",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252": "true",
-    "RunOnceActivity.typescript.service.memoryLimit.init": "true",
-    "codeWithMe.voiceChat.enabledByDefault": "false",
-    "last_opened_file_path": "/Volumes/mac/Development/packages/laravel-localized-routes",
-    "nodejs_package_manager_path": "npm"
+  <component name="PropertiesComponent">{
+  &quot;keyToString&quot;: {
+    &quot;ModuleVcsDetector.initialDetectionPerformed&quot;: &quot;true&quot;,
+    &quot;PHPUnit.Feature.executor&quot;: &quot;Run&quot;,
+    &quot;PHPUnit.Unit.executor&quot;: &quot;Run&quot;,
+    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.TerminalTabsStorage.copyFrom.TerminalArrangementManager.252&quot;: &quot;true&quot;,
+    &quot;RunOnceActivity.typescript.service.memoryLimit.init&quot;: &quot;true&quot;,
+    &quot;codeWithMe.voiceChat.enabledByDefault&quot;: &quot;false&quot;,
+    &quot;last_opened_file_path&quot;: &quot;/Volumes/mac/Development/packages/laravel-localized-routes&quot;,
+    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;
   }
-}]]></component>
+}</component>
   <component name="RunManager" selected="PHPUnit.Unit">
     <configuration name="Feature" type="PHPUnitRunConfigurationType" factoryName="PHPUnit" temporary="true">
       <TestRunner configuration_file="$PROJECT_DIR$/phpunit.xml.dist" directory="$PROJECT_DIR$/tests/Feature" />
@@ -192,7 +192,7 @@
       <option name="presentableId" value="Default" />
       <updated>1775491698321</updated>
       <workItem from="1775491699488" duration="1115000" />
-      <workItem from="1775497636936" duration="714000" />
+      <workItem from="1775497636936" duration="824000" />
     </task>
     <servers />
   </component>

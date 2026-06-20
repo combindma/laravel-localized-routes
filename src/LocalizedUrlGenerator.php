@@ -48,7 +48,7 @@ class LocalizedUrlGenerator
      *
      * @return string
      */
-    public function generateFromRequest(string $locale = null, $parameters = null, bool $absolute = true, bool $keepQuery = true): string
+    public function generateFromRequest(?string $locale = null, $parameters = null, bool $absolute = true, bool $keepQuery = true): string
     {
         $urlBuilder = UrlBuilder::make($this->request->fullUrl());
         $requestQueryString = $urlBuilder->getQuery();
@@ -123,7 +123,7 @@ class LocalizedUrlGenerator
     protected function generateNamedRouteURL(string $locale, array $parameters = [], bool $absolute = true): string
     {
         try {
-            return URL::route($this->route->getName(), $parameters, $absolute, $locale);
+            return URL::route($this->route->getName(), $parameters, $absolute);
         } catch (RouteNotFoundException $e) {
             return '';
         }
