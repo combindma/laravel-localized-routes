@@ -123,7 +123,7 @@ class LocalizedUrlGenerator
     protected function generateNamedRouteURL(string $locale, array $parameters = [], bool $absolute = true): string
     {
         try {
-            return URL::route($this->route->getName(), $parameters, $absolute);
+            return URL::route($this->route->getName(), $parameters, $absolute, $locale);
         } catch (RouteNotFoundException $e) {
             return '';
         }
