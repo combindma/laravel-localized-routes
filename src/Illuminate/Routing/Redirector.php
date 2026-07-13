@@ -7,6 +7,16 @@ use Illuminate\Routing\Redirector as BaseRedirector;
 class Redirector extends BaseRedirector
 {
     /**
+     * The URL generator instance.
+     *
+     * Narrowed from Laravel's UrlGenerator to the localized one,
+     * which accepts an additional $locale argument.
+     *
+     * @var \CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator
+     */
+    protected $generator;
+
+    /**
      * Create a new redirect response to a named route.
      *
      * @param string $route

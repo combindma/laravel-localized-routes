@@ -3,9 +3,9 @@
 namespace CodeZero\LocalizedRoutes;
 
 use CodeZero\LocalizedRoutes\Facades\LocaleConfig;
+use CodeZero\LocalizedRoutes\Illuminate\Routing\UrlGenerator;
 use CodeZero\LocalizedRoutes\UrlBuilder\UrlBuilder;
 use Illuminate\Http\Request;
-use Illuminate\Support\Facades\URL;
 use Illuminate\Support\Collection;
 use Illuminate\Support\Facades\App;
 use Illuminate\Contracts\Routing\UrlRoutable;
@@ -123,10 +123,24 @@ class LocalizedUrlGenerator
     protected function generateNamedRouteURL(string $locale, array $parameters = [], bool $absolute = true): string
     {
         try {
-            return URL::route($this->route->getName(), $parameters, $absolute, $locale);
+            return $this->getUrlGenerator()->route($this->route->getName(), $parameters, $absolute, $locale);
         } catch (RouteNotFoundException $e) {
             return '';
         }
+    }
+
+    /**
+     * Get the localized URL generator.
+     *
+     * Its route() method takes an extra $locale argument that is absent from
+     * Laravel's UrlGenerator contract and from the URL facade's annotations,
+     * so it needs to be resolved with its concrete type intact.
+     *
+     * @return UrlGenerator
+     */
+    protected function getUrlGenerator(): UrlGenerator
+    {
+        return App::make(UrlGenerator::class);
     }
 
     /**

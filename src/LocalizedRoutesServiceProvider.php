@@ -165,6 +165,12 @@ class LocalizedRoutesServiceProvider extends ServiceProvider
             );
         });
 
+        // Alias the binding to our concrete class, so it can be resolved
+        // with its type intact. The "url" binding resolves to a generator
+        // that accepts an extra $locale argument, which is not part of
+        // Laravel's UrlGenerator contract.
+        $this->app->alias('url', UrlGenerator::class);
+
         $this->app->extend('url', function (UrlGeneratorContract $url, $app) {
             // Next we will set a few service resolvers on the URL generator so it can
             // get the information it needs to function. This just provides some of
